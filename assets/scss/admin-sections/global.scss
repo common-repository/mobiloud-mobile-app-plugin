@@ -1,0 +1,353 @@
+:root {
+	--mlconf-border: 1px solid #D8D8D8;
+}
+
+@mixin mlconf-panel-title-font {
+	font-family: Roboto, sans-serif;
+	font-weight: normal;
+	font-size: 1.15rem;
+	font-style: normal;
+	color: #454545;
+}
+
+@mixin mlconf-panel-tab-header {
+	font-family: Roboto, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 150%;
+	color: #999999;
+	text-transform: uppercase;
+}
+
+@mixin mlconf-panel-tab-title {
+	font-family: Roboto, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 150%;
+	color: #666666;
+}
+
+@mixin mlconf-panel-tab-icon {
+	position: absolute;
+	max-width: 24px;
+	transform: translate( 0, -50% );
+	top: 50%;
+}
+
+.mlsw__button-controls {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	grid-template-rows: 1fr;
+	margin-top: 30px;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.mlsw__button {
+	display: block;
+	height: 55px;
+	text-align: center;
+	color: #fff !important;
+	border: none;
+	box-shadow: none;
+	border-radius: 5px;
+	overflow: hidden;
+	font-family: Roboto, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 55px;
+	cursor: pointer;
+}
+
+.mlsw__button--gray {
+	background: #A9A9A9;
+}
+
+.mlsw__button--blue {
+	background: #42A4FF;
+}
+
+.mlconf {
+	&__admin-main-title {
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 48px;
+		line-height: 56px;
+		color: #000000;
+		text-align: center;
+		margin: 0 auto;
+		margin-bottom: 18px;
+	}
+
+	&__admin-main-subtitle {
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 28px;
+		color: #999999;
+		text-align: center;
+		margin: 0 auto;
+		margin-bottom: 60px;
+	}
+
+	&__panel {
+		background: #FFFFFF;
+		border: var( --mlconf-border );
+		box-sizing: border-box;
+		border-radius: 3px;
+		margin-bottom: 1.25rem;
+
+		&--collapsible {
+
+		}
+	}
+
+	&__panel-title {
+		@include mlconf-panel-title-font;
+		padding: 1.25rem;
+		border-bottom: var( --mlconf-border );
+	}
+
+	&__panel-content-wrapper {
+		padding: 20px;
+		line-height: 150%;
+		color: #757575;
+		font-size: 0.875rem;
+
+		p {
+			font-size: inherit;
+		}
+
+		label {
+			color: #656565;
+		}
+	}
+
+	&__panel-content-row {
+		margin-top: 1.875rem;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&-title {
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 0.875rem;
+			line-height: 1.1875rem;
+			color: #555;
+			margin-bottom: 0.625rem;
+		}
+
+		&-desc {
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: 300;
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+			color: #888;
+			margin-bottom: 0.875rem;
+		}
+	}
+
+	&__tab {
+		position: relative;
+		background: #FFFFFF;
+		border: 1px solid #DDDDDD;
+		box-sizing: border-box;
+		border-radius: 5px;
+		padding: 16px;
+
+		&-header {
+			@include mlconf-panel-tab-header;
+		}
+
+		&-title {
+			@include mlconf-panel-tab-title;
+		}
+
+		&-icon {
+			@include mlconf-panel-tab-icon;
+		}
+
+		&-text-wrapper {
+			margin-left: 45px;
+		}
+
+		&:hover {
+			background-color: #ececec;
+		}
+
+		& > a {
+			text-decoration: none;
+		}
+	}
+
+	&__panel-grid {
+		display: grid;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+
+		&-3by2 {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+
+		&-3by1 {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 1fr;
+		}
+
+		@media only screen and ( max-width: 1115px ) {
+			&-3by2 {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(3, 1fr);
+			}
+
+			&-3by1 {
+				grid-template-columns: 1fr;
+				grid-template-rows: repeat(3, 1fr);
+			}
+		}
+
+		@media only screen and ( max-width: 740px ) {
+			&-3by2 {
+				grid-template-columns: 1fr;
+				grid-template-rows: repeat(3, 1fr);
+			}
+		}
+	}
+
+	&__checkbox-control-wrapper {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+
+		& > input[type="checkbox"] {
+			margin-top: 4px;
+		}
+	}
+
+	&__panel-checkbox-label-desc {
+		margin-left: 0.75rem;
+
+		& > label {
+			font-weight: bold;
+			color: #656565;
+		}
+	}
+
+	&__panel-checkbox-desc {
+		margin-top: 3px;
+	}
+}
+
+.wp-filter {
+	padding-left: 30px;
+	font-size: 1rem;
+
+	.filter-links {
+		li {
+			a {
+				margin: 0 15px;
+				padding: 20px 0;
+				font-size: 0.875rem;
+				font-weight: normal;
+
+				&.current {
+					border-bottom-color: #007CBA;
+				}
+			}
+
+			&:first-child {
+				a {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+.wp-filter + div {
+	display: flex;
+	flex-flow: row;
+	align-items: flex-start;
+
+	& > .ml2-sidebar {
+		order: 2;
+		width: 240px;
+		position: sticky;
+	}
+
+	& > .ml2-main-area {
+		flex: 1;
+		order: 1;
+		margin-right: 20px !important;
+	}
+}
+
+@media screen and (min-width: 571px){
+	#form_editor {
+		min-width: 240px;
+		margin-right: 260px;
+	}
+
+	.ml2-sidebar {
+		/* float: right; */
+		width: 240px;
+	}
+}
+
+@media screen and (max-width: 570px){
+	#form_editor {
+		width: 100%;
+		min-width: 240px;
+	}
+	.ml2-sidebar {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 571px){
+	.ml2-sidebar + .ml2-main-area {
+		min-width: 240px;
+		margin-right: 260px;
+	}
+}
+
+@media screen and (max-width: 570px){
+	.wp-filter + div {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+
+		& > .ml2-sidebar {
+			order: 2;
+			width: 100%;
+			position: sticky;
+		}
+
+		& > .ml2-main-area {
+			flex: 1;
+			order: 1;
+			margin-right: 20px !important;
+			width: 100%;
+		}
+	}
+}
+
+.toplevel_page_mobiloud {
+	#adminmenuback {
+		z-index: 3;
+	}
+}

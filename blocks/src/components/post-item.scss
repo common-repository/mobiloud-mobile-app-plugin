@@ -1,0 +1,35 @@
+.post-item {
+	&__title {
+		margin-bottom: 0.15rem;
+	}
+
+	&__meta {
+		margin-top: 0.3rem;
+		font: inherit;
+		line-height: inherit;
+
+		* {
+			font: inherit;
+			line-height: inherit;
+		}
+	}
+
+	&__body {
+		margin-top: 0.5rem;
+	}
+
+	&__taxonomies {
+		margin-top: 0.5rem;
+	}
+
+	&__product-price {
+		margin-top: 0.5rem;
+	}
+}
+
+.post-grid,
+.post-carousel {
+	&__item-title {
+		margin-top: 0.5rem;
+	}
+}

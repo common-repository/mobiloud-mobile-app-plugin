@@ -1,0 +1,41 @@
+{
+	"block": {},
+	"front": {
+		"colsMobile": {
+			"type": "number",
+			"default": 2
+		},
+		"colsTablet": {
+			"type": "number",
+			"default": 3
+		},
+		"currentPostType": {
+			"type": "string",
+			"default": "product"
+		},
+		"displayAs": {
+			"type": "string",
+			"default": "list"
+		},
+		"menuId": {
+			"type": "string",
+			"default": "0"
+		},
+		"showAuthor": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"showFeaturedImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPrice": {
+			"type": "boolean",
+			"default": true
+		}
+	}
+}

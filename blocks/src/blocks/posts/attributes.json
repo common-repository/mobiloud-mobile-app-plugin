@@ -1,0 +1,122 @@
+{
+	"block": {
+		"postTypes": {
+			"type": "array",
+			"default": []
+		},
+		"showTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"taxonomies": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"front": {
+		"aspectRatio": {
+			"type": "string",
+			"default": "16-9"
+		},
+		"colsMobile": {
+			"type": "number",
+			"default": 2
+		},
+		"colsTablet": {
+			"type": "number",
+			"default": 3
+		},
+		"currentPostType": {
+			"type": "string",
+			"default": "post"
+		},
+		"dateFormat": {
+			"type": "string",
+			"default": "do MMMM, yyyy"
+		},
+		"dateFormatCustom": {
+			"type": "string",
+			"default": ""
+		},
+		"displayAs": {
+			"type": "string",
+			"default": "list"
+		},
+		"dividerColor": {
+			"type": "string",
+			"default": "#e3e3e3"
+		},
+		"dividerStyle": {
+			"type": "string",
+			"default": "solid"
+		},
+		"excerptLength": {
+			"type": "number",
+			"default": 10
+		},
+		"highlightFirstPost": {
+			"type": "boolean",
+			"default": false
+		},
+		"infiniteScroll": {
+			"type": "boolean",
+			"default": false
+		},
+		"loadMoreButton": {
+			"type": "boolean",
+			"default": false
+		},
+		"orderby": {
+			"type": "string",
+			"default": "date"
+		},
+		"order": {
+			"type": "string",
+			"default": "desc"
+		},
+		"postCount": {
+			"type": "number",
+			"default": 5
+		},
+		"postItemSpacing": {
+			"type": "number",
+			"default": 0.75
+		},
+		"showAuthor": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDivider": {
+			"type": "boolean",
+			"default": true
+		},
+		"showExcerpt": {
+			"type": "boolean",
+			"default": true
+		},
+		"showFeaturedImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPrice": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTaxonomies": {
+			"type": "object",
+			"default": {}
+		},
+		"selectedTerms": {
+			"type": "object",
+			"default": {}
+		},
+		"taxonomyAliases": {
+			"type": "object",
+			"default": {}
+		}
+	}
+}

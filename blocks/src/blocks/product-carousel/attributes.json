@@ -1,0 +1,38 @@
+{
+	"block": {
+		"orderby": {
+			"type": "string",
+			"default": "date"
+		},
+		"order": {
+			"type": "string",
+			"default": "desc"
+		},
+		"postCount": {
+			"type": "number",
+			"default": 5
+		}
+	},
+	"front": {
+		"selectedTerms": {
+			"type": "object",
+			"default": {}
+		},
+		"showFeaturedImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPrice": {
+			"type": "boolean",
+			"default": true
+		},
+		"currentPostType": {
+			"type": "string",
+			"default": "product"
+		},
+		"blockHeadingText": {
+			"type": "string",
+			"default": ""
+		}
+	}
+}

@@ -1,0 +1,33 @@
+.product-carousel {
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 1px solid #e3e3e3;
+	overflow: hidden;
+
+	&--container {
+		display: flex;
+		flex-direction: row;
+		overflow-x: scroll;
+		padding-bottom: 1rem;
+		margin-bottom: -1rem;
+	}
+
+	&--item {
+		padding: 0.75rem #{$global-padding};
+		border-left: 1px solid #e3e3e3;
+
+		&:first-child {
+			border-left: none;
+		}
+	}
+
+	&--item-image-wrapper {
+		height: 0;
+		padding-bottom: 100%;
+		min-width: 150px;
+
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,53 @@
+@import '../global.scss';
+
+.post-list-expanded {
+	&--divider-true {
+		.post-list-expanded__item {
+			border-top: 1px solid $border-color;
+			padding: #{$global-padding} #{$global-padding};
+			
+			&:first-child {
+				border-top: none;
+			}
+		}
+	}
+
+	&__item {
+		padding: #{$global-padding/2} #{$global-padding};
+	}
+
+	&__item-title {
+		margin-bottom: 0.35rem;
+	}
+
+	&__item-excerpt {
+		margin-top: 0.5rem;
+	}
+	
+	&__item-thumbnail-wrapper {
+		position: relative;
+		margin-right: 1rem;
+		overflow: hidden;
+		width: 100%;
+		height: 0;
+		padding-bottom: 56.25%;
+
+		.post-list-expanded__item-thumbnail {
+			display: block;
+			position: absolute;
+			object-fit: cover;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+		}
+	}
+	
+	&__item-text-wrapper {
+		margin-top: 0.5rem;
+	}
+}

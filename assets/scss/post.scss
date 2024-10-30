@@ -1,0 +1,533 @@
+@font-face {
+	font-family: "Ampersand";
+	src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
+	unicode-range: U+0026; }
+	@font-face {
+	font-family: "Ampersand";
+	src: local("Georgia");
+	unicode-range: U+270C; }
+	body {
+		word-wrap: break-word; }
+
+	pre code {
+		word-wrap: normal; }
+
+	/**
+	* Dropcap Sass @include
+	* Use the following Sass @include with any selector you feel necessary.
+	*
+	@include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
+	*
+	* Extend this object into your custom stylesheet. Let the variables do the work.
+	*
+	*/
+	html {
+		font: normal 100%/1.65 serif; }
+
+	body {
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		-o-hyphens: auto;
+		hyphens: auto;
+		color: #444444; }
+
+	small {
+		font-size: 65%; }
+
+	h1, h2, h3, h4, h5, h6 {
+		text-rendering: optimizeLegibility;
+		line-height: 1;
+		margin-top: 0; }
+
+	.tera {
+		font-size: 117px;
+		font-size: 7.3125rem;
+		margin-bottom: 0.22564px;
+		margin-bottom: 0.22564rem; }
+
+	.giga {
+		font-size: 90px;
+		font-size: 5.625rem;
+		margin-bottom: 0.29333px;
+		margin-bottom: 0.29333rem; }
+
+	.mega {
+		font-size: 72px;
+		font-size: 4.5rem;
+		margin-bottom: 0.36667px;
+		margin-bottom: 0.36667rem; }
+
+	.alpha, h1 {
+		font-size: 24px;
+		font-size: 1.5rem;
+		margin-bottom: 1.1px;
+		margin-bottom: 1.1rem; }
+
+	.beta, h2 {
+		font-size: 22px;
+		font-size: 1.375rem;
+		margin-bottom: 1.2px;
+		margin-bottom: 1.2rem; }
+
+	.gamma, h3 {
+		font-size: 20px;
+		font-size: 1.25rem;
+		margin-bottom: 1.32px;
+		margin-bottom: 1.32rem; }
+
+	.delta, h4 {
+		font-size: 19px;
+		font-size: 1.1875rem;
+		margin-bottom: 1.38947px;
+		margin-bottom: 1.38947rem; }
+
+	.epsilon, h5 {
+		font-size: 18.5px;
+		font-size: 1.15625rem;
+		margin-bottom: 1.42703px;
+		margin-bottom: 1.42703rem; }
+
+	.zeta, h6 {
+		font-size: 18px;
+		font-size: 1.125rem;
+		margin-bottom: 1.46667px;
+		margin-bottom: 1.46667rem; }
+
+	p {
+		margin: auto auto 1.5em; }
+
+	abbr,
+	acronym,
+	blockquote,
+	code,
+	dir,
+	kbd,
+	listing,
+	plaintext,
+	q,
+	samp,
+	tt,
+	var,
+	xmp {
+		-webkit-hyphens: none;
+		-moz-hyphens: none;
+		-ms-hyphens: none;
+		-o-hyphens: none;
+		hyphens: none; }
+
+	pre code {
+		white-space: -moz-pre-wrap;
+		white-space: pre-wrap; }
+
+	pre {
+		white-space: pre; }
+
+	code {
+		white-space: pre;
+		font-family: monospace; }
+
+	/**
+	* Abbreviations Markup
+	*
+	<abbr title="hyper text markup language">HMTL</abbr>
+	*
+	* Extend this object into your markup.
+	*
+	*/
+	abbr {
+		font-variant: small-caps;
+		font-weight: 600;
+		text-transform: lowercase;
+		color: gray; }
+	abbr[title]:hover {
+		cursor: help; }
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: #222222; }
+
+	p + .drop-cap {
+		text-indent: 0;
+		margin-top: 0; }
+
+	.drop-cap:first-letter {
+		float: left;
+		margin: inherit;
+		padding: inherit;
+		font-size: 4em;
+		font-family: inherit;
+		line-height: 1;
+		text-indent: 0;
+		background: transparent;
+		color: inherit; }
+
+	/**
+	* Lining Definition Style Markup
+	*
+	<dl class="lining">
+	<dt><b></b></dt>
+	<dd></dd>
+	</dl>
+	*
+	* Extend this object into your markup.
+	*
+	*/
+	.lining dt,
+	.lining dd {
+		display: inline;
+		margin: 0; }
+	.lining dt + dt:before,
+	.lining dd + dt:before {
+		content: "\A";
+		white-space: pre; }
+	.lining dd + dd:before {
+		content: ", "; }
+	.lining dd:before {
+		content: ": ";
+		margin-left: -0.2rem; }
+
+	/**
+	* Dictionary Definition Style Markup
+	*
+	<dl class="dictionary-style">
+	<dt><b></b></dt>
+	<dd></dd>
+	</dl>
+	*
+	* Extend this object into your markup.
+	*
+	*/
+	.dictionary-style dt {
+		display: inline;
+		counter-reset: definitions; }
+	.dictionary-style dt + dt:before {
+		content: ", ";
+		margin-left: -0.2rem; }
+	.dictionary-style dd {
+		display: block;
+		counter-increment: definitions; }
+	.dictionary-style dd:before {
+		content: counter(definitions,decimal) ". "; }
+
+	/**
+	* Blockquote Markup
+	*
+	<figure>
+	<blockquote cite="">
+	<p></p>
+	</blockquote>
+	<figcaption>
+	<cite>
+	<small><a href=""></a></small>
+	</cite>
+	</figcaption>
+	</figure>
+	*
+	* Extend this object into your markup.
+	*
+	*/
+	/**
+	* Pull Quotes Markup
+	*
+	<aside class="pull-quote">
+	<blockquote>
+	<p></p>
+	</blockquote>
+	</aside>
+	*
+	* Extend this object into your custom stylesheet.
+	*
+	*/
+	.pull-quote {
+		position: relative;
+		padding: 1em; }
+	.pull-quote:before, .pull-quote:after {
+		height: 1em;
+		opacity: 0.5;
+		position: absolute;
+		font-size: 4em;
+		color: #dc976e; }
+	.pull-quote:before {
+		content: '“';
+		top: 0;
+		left: 0; }
+	.pull-quote:after {
+		content: '”';
+		bottom: 0;
+		right: 0; }
+
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	body.mb_body {
+		font: normal normal 100%/1.5em "Roboto", Arial, sans-serif;
+		background: #fff;
+		color: #000;
+		-webkit-text-size-adjust: 100%;
+	}
+	.clear,
+	.clearfix,
+	.mb_clear,
+	.mb_clearfix {
+		clear: both;
+	}
+	.mb_article {
+		max-width: 768px;
+		margin: 0 auto;
+	}
+	.mb_article .mb_post_meta {
+		font-size: 90%;
+		color: #999;
+		float: left;
+	}
+	.mb_article .mb_post_meta.right {
+		float: right;
+	}
+	.mb_article h1.mb_post_title {
+		padding: 8px 0;
+		line-height: 1.25em;
+		margin-bottom: 0;
+	}
+	.mb_article p.mb_post_date {
+		margin-bottom: 0;
+	}
+	.mb_article a {
+		color: #3399ff;
+		text-decoration: underline;
+	}
+	.mb_article a:hover,
+	.mb_article a:active,
+	.mb_article a:focus {
+		text-decoration: none;
+	}
+	.mb_article a img {
+		text-decoration: none;
+	}
+	.mb_article img {
+		max-width: 100% !important;
+		height: auto;
+	}
+	.mb_article blockquote,
+	.mb_article .wp-caption-text {
+		color: #999;
+	}
+	.mb_article blockquote {
+		margin-left: 1em;
+		border-left: 2px solid #aaa;
+		padding-left: 1em;
+	}
+	.mb_article table {
+		border: none;
+		border-spacing: 0;
+	}
+	.mb_article table th {
+		background-color: #ddd;
+		border-left: 1px solid #999;
+	}
+	.mb_article table th:first-of-type {
+		border-left: 0;
+	}
+	.mb_article table tr:nth-child(even) {
+		background-color: #f4f4f4;
+	}
+	.mb_article table td {
+		border-top: 1px solid #999;
+		border-left: 1px solid #999;
+	}
+	.mb_article table td:first-of-type {
+		border-left: 0;
+	}
+	.mb_article .media-container {
+		width: 100% !important;
+	}
+	.mb_article .media-container img,
+	.mb_article .media-container embed,
+	.mb_article .media-container object,
+	.mb_article .media-container video {
+		max-width: 100% !important;
+		height: auto !important;
+	}
+	.mb_article iframe {
+		/*max-width:100% !important;*/
+	}
+	@media screen and (max-width: 480px) {
+		.mb_article {
+			padding: 2em 1em;
+		}
+		.gallery .gallery-item {
+			width: 100% !important;
+		}
+		.gallery .gallery-item img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.gallery {
+		margin-bottom: 20px;
+	}
+	.gallery-item {
+		float: left;
+		margin: 0 4px 4px 0;
+		overflow: hidden;
+		position: relative;
+	}
+	.gallery-columns-1 .gallery-item {
+		max-width: 100%;
+	}
+	.gallery-columns-2 .gallery-item {
+		max-width: 48%;
+		max-width: -webkit-calc(46%);
+		max-width: calc(50% - 4px);
+	}
+	.gallery-columns-3 .gallery-item {
+		max-width: 32%;
+		max-width: -webkit-calc(29.3%);
+		max-width: calc(33.3% - 4px);
+	}
+	.gallery-columns-4 .gallery-item {
+		max-width: 23%;
+		max-width: -webkit-calc(21%);
+		max-width: calc(25% - 4px);
+	}
+	.gallery-columns-5 .gallery-item {
+		max-width: 19%;
+		max-width: -webkit-calc(16%);
+		max-width: calc(20% - 4px);
+	}
+	.gallery-columns-6 .gallery-item {
+		max-width: 15%;
+		max-width: -webkit-calc(12.7%);
+		max-width: calc(16.7% - 4px);
+	}
+	.gallery-columns-7 .gallery-item {
+		max-width: 13%;
+		max-width: -webkit-calc(10.28%);
+		max-width: calc(14.28% - 4px);
+	}
+	.gallery-columns-8 .gallery-item {
+		max-width: 11%;
+		max-width: -webkit-calc(8.5%);
+		max-width: calc(12.5% - 4px);
+	}
+	.gallery-columns-9 .gallery-item {
+		max-width: 9%;
+		max-width: -webkit-calc(7.1%);
+		max-width: calc(11.1% - 4px);
+	}
+	.gallery-columns-1 .gallery-item:nth-of-type(1n),
+	.gallery-columns-2 .gallery-item:nth-of-type(2n),
+	.gallery-columns-3 .gallery-item:nth-of-type(3n),
+	.gallery-columns-4 .gallery-item:nth-of-type(4n),
+	.gallery-columns-5 .gallery-item:nth-of-type(5n),
+	.gallery-columns-6 .gallery-item:nth-of-type(6n),
+	.gallery-columns-7 .gallery-item:nth-of-type(7n),
+	.gallery-columns-8 .gallery-item:nth-of-type(8n),
+	.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+		margin-right: 0;
+	}
+	.gallery-columns-1.gallery-size-medium figure.gallery-item:nth-of-type(1n+1),
+	.gallery-columns-1.gallery-size-thumbnail figure.gallery-item:nth-of-type(1n+1),
+	.gallery-columns-2.gallery-size-thumbnail figure.gallery-item:nth-of-type(2n+1),
+	.gallery-columns-3.gallery-size-thumbnail figure.gallery-item:nth-of-type(3n+1) {
+		clear: left;
+	}
+	.gallery-caption {
+		background-color: rgba(0, 0, 0, 0.7);
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		color: #fff;
+		font-size: 12px;
+		line-height: 1.5;
+		margin: 0;
+		max-height: 50%;
+		opacity: 0;
+		padding: 6px 8px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		text-align: left;
+		width: 100%;
+	}
+	.gallery-caption:before {
+		content: "";
+		height: 100%;
+		min-height: 49px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	.gallery-item:hover .gallery-caption {
+		opacity: 1;
+	}
+	.gallery-columns-7 .gallery-caption,
+	.gallery-columns-8 .gallery-caption,
+	.gallery-columns-9 .gallery-caption {
+		display: none;
+	}
+	/*# sourceMappingURL=styles.css.map */
+	.ml-relatedposts{display:block;width:100%;padding-top:30px;}
+	.ml-relatedposts:after,.ml-relatedposts-list .ml-relatedposts-post:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.ml-relatedposts h4{margin:0 0 15px;font-size: 1em;line-height: 1.5em;}
+	.ml-relatedposts-header{font-weight: bold;padding:0px}
+	.ml-relatedposts-list{clear:left;}
+	.ml-relatedposts-list .ml-relatedposts-post{padding:10px 0px 5px 0px;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+	.ml-relatedposts-list .ml-relatedposts-post img{width:25vw;margin: 0px 10px 10px 0px;float:left;}
+	.ml-relatedposts-list .ml-relatedposts-post + .ml-relatedposts-post{border-top:1px solid #ddd;}
+	p.ml-relatedposts-excerpt {margin-bottom: 0px;}
+	p.ml-relatedposts-date {margin-bottom: 0px;margin-top: 0.5em;font-style: italic;font-size: 0.8em;}
+	.mb_article a.ml-relatedposts-a {color:#000;text-decoration:none;float:left; width:29%; margin-left:5%;}
+	.mb_article a.ml-relatedposts-a:first-child { margin-left:0;}
+	.mb_article a.ml-relatedposts-a:hover {color:#000;text-decoration:underline;}
+	.ml-relatedposts-title { margin-bottom:15px; }
+	@media screen and (min-width: 768px){
+		.ml-relatedposts-list .ml-relatedposts-post img{width:192px;}
+	}
+	.ml-relatedposts-img { display: block; width:100%; height:192px; margin-bottom:15px; background-position: center;background-repeat: no-repeat; background-size: auto 100%; background-size: cover; }
+	html[dir="rtl"] .ml-relatedposts-list {
+		clear:right;
+	}
+	html[dir="rtl"] .ml-relatedposts-list .ml-relatedposts-post img {
+		margin: 0px 0px 10px 10px;
+		float:right;
+	}
+	html[dir="rtl"] .mb_article a.ml-relatedposts-a {float:right; width:29%; padding-right:5%;padding-left:0;}
+	html[dir="rtl"] .mb_article a.ml-relatedposts-a:first-child { padding-right:0;}
+
+body {
+	padding: 1rem 0.5rem;
+}
+
+.dt-body--post-page {
+	.dt-pp__thumbnail {
+		height: 0;
+		padding-bottom: 56.25%;
+		margin: 0 -0.5rem;
+		margin-top: -1rem;
+		margin-bottom: 1rem;
+		background-size: cover !important;
+		background-position: center center !important;
+		background-repeat: no-repeat !important;
+	}
+
+	.dt-pp__title {
+		margin-bottom: 0.4rem;
+	}
+
+	.dt-pp__content {
+		margin-top: 1.5rem;
+	}
+}

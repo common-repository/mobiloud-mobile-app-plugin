@@ -1,0 +1,33 @@
+{
+	"block": {},
+	"front": {
+		"borderColor": {
+			"type": "string",
+			"default": "#999"
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid"
+		},
+		"dividerAlignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"dividerBottomMargin": {
+			"type": "number",
+			"default": 10
+		},
+		"dividerWidth": {
+			"type": "number",
+			"default": 100
+		},
+		"dividerHorizontalAlignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"dividerTopMargin": {
+			"type": "numder",
+			"default": 10
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"block": {},
+	"front": {
+		"fontColor": {
+			"type": "string",
+			"default": "#333"
+		},
+		"fontFamily": {
+			"type": "string",
+			"default": "Roboto, sans-serif"
+		},
+		"fontSize": {
+			"type": "number",
+			"default": 1.5
+		},
+		"fontWeight": {
+			"type": "string",
+			"default": "400"
+		},
+		"titleBottomMargin": {
+			"type": "number",
+			"default": 10
+		},
+		"titleText": {
+			"type": "string",
+			"default": ""
+		},
+		"titleTopMargin": {
+			"type": "number",
+			"default": 10
+		}
+	}
+}

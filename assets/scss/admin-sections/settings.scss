@@ -1,0 +1,47 @@
+.mlconf {
+	&__settings__search-checkbox-list,
+	&__settings__search-checkbox-list {
+		border: 1px solid #ccc;
+		padding: 1rem 0.5rem 0.5rem 0.5rem;
+		border-radius: 4px;
+		max-width: 300px;
+	}
+
+	&__settings__search-checkbox-list--search {
+		width: 100%;
+	}
+
+	&__settings__search-checkbox-list-list {
+		max-height: 200px;
+		overflow-y: scroll;
+		border: 1px solid #ccc;
+		padding: 0.5rem 0.75rem;
+		margin-top: 0.75rem;
+		border-radius: 4px;
+	}
+
+	&__settings__search-checkbox__button-controls {
+		margin-top: 0.5rem;
+	}
+}
+
+@media only screen and ( max-width: 800px ) {
+	.ml-radio-wrap {
+		select,
+		input[type="text"],
+		input[type="url"] {
+			display: block;
+			margin-top: 0.5rem;
+			margin-left: 0;
+		}
+	}
+
+	.mlconf__settings__search-checkbox-list {
+		max-width: 100%;
+		width: 98%;
+	}
+
+	.ml-col-half {
+		width: 100%;
+	}
+}

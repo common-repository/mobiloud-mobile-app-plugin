@@ -1,0 +1,151 @@
+@import '../../node_modules/bulma/sass/utilities/_all.sass';
+@import './post-item.scss';
+
+$global-padding: 0.75rem;
+$border-color: #e3e3e3;
+
+@mixin font-title {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+}
+
+@mixin font-body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+@mixin font-meta {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+}
+
+.ptr--pull-down-treshold-breached {
+	margin-top: 2rem;
+}
+
+.colsMobile {
+	&--1 {
+		.post-grid__item--highlight-false {
+			width: 100%;
+		}
+
+		&--Mobile {
+			.post-grid__item--highlight-false {
+				width: 100% !important;
+			}
+		}
+	}
+
+	&--2 {
+		.post-grid__item--highlight-false {
+			width: 50%;
+		}
+
+		&--Mobile {
+			.post-grid__item--highlight-false {
+				width: 50% !important;
+			}
+		}
+	}
+}
+
+@include from ( $tablet ) {
+	.colsTablet {
+		&--1 {
+			.post-grid__item--highlight-false {
+				width: 100%;
+			}
+		}
+	
+		&--2 {
+			.post-grid__item--highlight-false {
+				width: 50%;
+			}
+		}
+	
+		&--3 {
+			.post-grid__item--highlight-false {
+				width: calc( 100% / 3 );
+			}
+		}
+	}
+}
+
+.editor-styles-wrapper {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	overflow-x: hidden !important;
+}
+
+.editor-post-trash {
+	display: none;
+}
+
+.edit-post-post-link__preview-label {
+	display: none;
+}
+
+.edit-post-post-link__preview-link-container {
+	display: none;
+}
+
+.block-editor-block-list__block {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.edit-post-visual-editor__post-title-wrapper {
+	display: none;
+}
+
+.editor-styles-wrapper .editor-post-title__block {
+	margin-bottom: 0;
+}
+
+.edit-post-visual-editor__post-title-wrapper .editor-post-title {
+	margin: 0;
+}
+
+.block-editor-post-preview__button-resize:nth-child(1) {
+	display: none;
+}
+
+.editor-post-switch-to-draft {
+	display: none;
+}
+
+.block-editor-inserter__tabs {
+	div[role="tablist"] {
+		display: none;
+	}
+}
+
+.block-heading {
+	padding: 0 #{$global-padding};
+}
+
+.components-circular-option-picker__option:focus:after {
+	display: none;
+}
+
+.components-button.is-pressed:focus:not(:disabled) {
+	box-shadow: none;
+}
+
+.popover-color-picker {
+	.components-popover__content {
+		min-width: 0 !important;
+	}
+
+	.sketch-picker {
+		box-shadow: none !important;
+	}
+}
